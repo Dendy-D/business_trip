@@ -1,0 +1,56 @@
+.aside-bar {
+  a {
+    text-decoration: none;
+  }
+  
+  min-width: 234px !important;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 14px;
+  box-shadow: 0px 1px 2.8px 0px #C0C0C040;
+}
+
+.user-profile-divider {
+  height: 44px;
+  width: 2px;
+  background-color: #D9D9D9;
+}
+
+.antd-layout {
+  max-height: 100vh;
+}
+
+.ant-layout-content {
+  max-height: 100vh;
+  padding: 25px;
+  background: #F0F2F5;
+  overflow: auto; /* Добавьте overflow: auto, чтобы добавить прокрутку, если контент больше размера экрана */
+}
+
+.ant-btn {
+  font-size: 12px;
+  line-height: 14.4px;
+  font-weight: 400;
+  text-align: center;
+  box-shadow: none;
+}
+
+h4.ant-typography {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h5.ant-typography {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.ant-layout-header {
+  box-shadow: 0px 1px 2.8px 0px #C0C0C040;
+  border-bottom: 1px solid #C0C0C040;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-inline: 14px !important;
+}

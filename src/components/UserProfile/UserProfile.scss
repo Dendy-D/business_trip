@@ -1,0 +1,23 @@
+.username {
+  font-size: 11px;
+  color: black;
+}
+
+.position {
+  font-size: 10px;
+  color: #6C6C6C;
+}
+
+.user-profile-info {
+  width: 134px;
+  height: 46px;
+  line-height: normal;
+  gap: 2px;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.user-profile-container {
+  display: flex;
+  align-items: center;
+}

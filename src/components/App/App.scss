@@ -1,0 +1,27 @@
+@import '../../assets/fonts/MuseoSans/MuseoSans.css';
+
+* {
+  font-family: 'Museo Sans Cyrl 300', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 300;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.ant-input,
+.ant-picker,
+.ant-select,
+.ant-input-number {
+  background-color: white !important;
+  border: none;
+  box-shadow: 1px 1px 5px 0px #0000000d !important;
+}
+.ant-select-selector {
+  background-color: white !important;
+  border: none;
+}

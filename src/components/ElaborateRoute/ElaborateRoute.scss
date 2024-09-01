@@ -1,0 +1,6 @@
+.elaborateRoute {
+  display: grid;
+  grid-template-columns: repeat(3, 10fr) 1fr;
+  gap: 10px;
+  align-items: center;
+}
