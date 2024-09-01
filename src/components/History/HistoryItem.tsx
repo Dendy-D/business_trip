@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Task } from '../../models/Task';
 // import { RESULT_OPTIONS_MAP } from '../../../task/TaskComponent';
 import TimelineItem from 'antd/lib/timeline/TimelineItem';

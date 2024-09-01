@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Task } from '../../models/Task';
 import {
   getEntityList,
@@ -9,7 +9,7 @@ import { Timeline, Typography } from 'antd';
 import './History.scss';
 import HistoryItem from './HistoryItem';
 
-const History: React.FC = ({ applicationId }) => {
+const History = ({ applicationId }) => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   useEffect(() => {

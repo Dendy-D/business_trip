@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ApplicationStatus } from '../../models/ApplicationStatus';
 import {
   getEntityList,
@@ -10,7 +10,7 @@ const { Step } = Steps;
 import { StepProps } from 'antd/es/steps';
 import './StatusBar.scss';
 
-const StatusBar: React.FC = ({ currentStatus, applicationClass }) => {
+const StatusBar = ({ currentStatus, applicationClass }) => {
   const [statusList, setStatusList] = useState<ApplicationStatus[]>([]);
   const [steps, setSteps] = useState<StepProps[]>([]);
 

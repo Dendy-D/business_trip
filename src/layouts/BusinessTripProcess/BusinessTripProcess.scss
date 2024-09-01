@@ -1,3 +1,8 @@
+.component {
+  display: flex;
+  flex-direction: column;
+}
+
 .project {
   .project-content {
     display: flex;
@@ -19,10 +24,14 @@
 
 .block {
   margin-bottom: 32px;
-  background-color: white;
+  // background-color: white;
+  background-color: rgba(255, 255, 255, 0.85);
   width: 100%;
   border-radius: 20px;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .information-content {
@@ -37,41 +46,95 @@
 }
 
 .employeeOnBusinessTrip {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
   .addEmployee {
     align-self: end;
+  }
+
+  .buttonGroup {
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+
+    .deleteEmployee {
+      color: black;
+    }
   }
 }
 
 .routes {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
   .addRoute {
     align-self: end;
   }
-}
 
-.elaborateRouteButton {
-  width: 136px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 5px;
+  .elaborateRouteButton {
+    align-self: flex-start;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
 
-  span {
-    font-size: 12px;
+    span {
+      font-size: 12px;
+    }
+  }
+  .bottomLine {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
 .textArea {
   min-height: 150px !important;
   max-height: 150px;
+  padding: 20px;
+  font-size: 13px !important;
+}
+
+.expenses {
+  .buttonGroup {
+    display: flex;
+    gap: 7px;
+
+    .button {
+      width: 150px;
+      height: 40px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .confirm {
+      background-color: #4FAF3B;
+      font-weight: 600;
+      color: white;
+    }
+
+    .decline {
+      background-color: white;
+      box-shadow: 1px 1px 5px 0px #0000000D;
+    }
+  }
+
+  .description {
+    font-size: 12px;
+    color: #8a8a8a;
+  }
+}
+
+.sendButton {
+  width: 152px;
+  background-color: #50b03d;
+  color: white;
+  font-size: 12px;
+  padding: 7px 45px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background-color 0.3s linear;
+
+  &:hover {
+    background-color: #68bd58;
+  }
 }
 
 .ant-input,

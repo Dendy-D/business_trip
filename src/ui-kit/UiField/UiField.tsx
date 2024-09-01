@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { FIELD_TYPE, UI_FIELD_MAP } from '../../constants/UiFieldMap';
 import { Rule } from 'rc-field-form/lib/interface';
 import { RulesEnum } from '../../constants/RulesConstants';

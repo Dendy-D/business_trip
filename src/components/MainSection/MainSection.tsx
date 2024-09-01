@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import TaskLayout from '../../layouts/TaskLayout';
@@ -14,7 +13,7 @@ import BusinessTripProcess from '../../layouts/BusinessTripProcess';
 // import AdminCalendarLayout from '../../layouts/admin/calendar-layout/AdminCalendarLayout';
 // import FileTemplateLayout from '../../layouts/admin/file-template-layout/FileTemplateLayout';
 
-const MainSection: React.FC = () => {
+const MainSection = () => {
   return (
     <Routes>
       <Route path={'/'}></Route>

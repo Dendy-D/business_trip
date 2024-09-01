@@ -1,11 +1,10 @@
-import React from 'react';
 import { Avatar, Flex } from 'antd';
 import { Dropdown, MenuProps } from 'antd/lib';
 
 import './UserProfile.scss';
 // import { keycloakClient, useAuth } from '../../contexts/auth-context';
 
-const UserProfile: React.FC = ({ classname }) => {
+const UserProfile = ({ classname }) => {
 //   const { userInfo } = useAuth();
 
   const items: MenuProps['items'] = [

@@ -1,10 +1,9 @@
-import React from 'react';
 import { Input, DatePicker } from 'antd';
 
 import { TrashCan } from '../../assets/icons/SvgIcons';
 import './ElaborateRoute.scss';
 
-const ElaborateRoute: React.FC = () => {
+const ElaborateRoute = () => {
   return (
     <div className="elaborateRoute">
       <div className="field">
@@ -24,7 +23,7 @@ const ElaborateRoute: React.FC = () => {
           placeholder="Когда"
         />
       </div>
-      <TrashCan onClick={la} />
+      <TrashCan />
     </div>
   );
 };

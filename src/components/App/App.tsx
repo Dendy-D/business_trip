@@ -1,4 +1,3 @@
-import React from 'react';
 import { ConfigProvider, Flex } from 'antd';
 import 'antd/dist/reset.css';
 import ru_Ru from 'antd/lib/locale/ru_RU';
@@ -27,7 +26,7 @@ import './App.scss';
 // dayjs.locale('ru');
 // dayjs.tz.guess();
 
-const App: React.FC = () => {
+const App = () => {
   // const {token} = useAuth();
 
   return (

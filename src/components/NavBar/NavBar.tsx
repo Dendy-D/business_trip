@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Menu } from 'antd';
 import { MenuProps } from 'antd/lib';
@@ -10,7 +10,7 @@ import './NavBar.scss'
 // import { ApplicationClass } from '../../models/ApplicationModel';
 // import { useAuth } from '../../contexts/auth-context';
 
-const NavBar: React.FC = () => {
+const NavBar = () => {
 
     const location = useLocation();
     // const navigate = useNavigate();

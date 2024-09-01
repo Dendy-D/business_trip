@@ -1,4 +1,3 @@
-import React from 'react';
 import { Divider, Layout } from 'antd';
 
 import UserProfile from '../../components/UserProfile/UserProfile';
@@ -6,7 +5,7 @@ import MainSection from '../../components/MainSection';
 import NavBar from '../../components/NavBar';
 import './MainLayout.scss';
 
-const MainLayout: React.FC = () => {
+const MainLayout = () => {
   const { Header, Sider, Content } = Layout;
 
   return (

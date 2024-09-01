@@ -1,35 +1,81 @@
 import React, { useState } from 'react';
 import { Button, Form, Typography } from 'antd';
 import { useForm } from 'antd/lib/form/Form';
+
 import FormItem from 'antd/lib/form/FormItem';
 import TextArea from 'antd/lib/input/TextArea';
 import { Select, Input } from 'antd';
 
 import EmployeeOnBusinessTrip from '../../components/EmployeeOnBusinessTrip';
-import Route from '../../components/Route';
-import ElaborateRoute from '../../components/ElaborateRoute'
+import SimpleRoute from '../../components/SimpleRoute';
+import ElaborateRoute from '../../components/ElaborateRoute';
 import { ElaborateRoute as ElaborateRouteIcon } from '../../assets/icons/SvgIcons';
 import './BusinessTripProcess.scss';
 
 // import UiField from '../../ui-kit/UiField';
 
-const BusinessTripProcess: React.FC = () => {
-  const [employees, setEmployees] = useState<JSX.Element[]>([
-    <EmployeeOnBusinessTrip index={0} key={0} />,
+type Employee = {
+  id: number;
+  element: JSX.Element;
+};
+
+const BusinessTripProcess = () => {
+  const [isSimpleRoute, setSimpleRoute] = useState(true);
+
+  const [routes, setRoutes] = useState<JSX.Element[]>([
+    <ElaborateRoute key={0} />,
+  ]);
+
+  const [employees, setEmployees] = useState<Employee[]>([
+    {
+      id: 0,
+      element: (
+        <EmployeeOnBusinessTrip
+          index={0}
+          key={0}
+          deleteEmployee={() => deleteEmployee(0)}
+        />
+      ),
+    },
   ]);
 
   const addEmployee = () => {
+    const newId = employees.length;
     setEmployees((prevEmployees) => [
       ...prevEmployees,
-      <EmployeeOnBusinessTrip
-        index={prevEmployees.length}
-        key={prevEmployees.length}
-      />,
+      {
+        id: newId,
+        element: (
+          <EmployeeOnBusinessTrip
+            index={newId}
+            key={newId}
+            deleteEmployee={() => deleteEmployee(newId)}
+          />
+        ),
+      },
     ]);
   };
 
+  const addRoute = () => {
+    setRoutes((prevRoutes) => [
+      ...prevRoutes,
+      <ElaborateRoute key={prevRoutes.length} />,
+    ]);
+  };
+
+  const backToSimpleRoute = () => {
+    setSimpleRoute(true);
+    setRoutes([<ElaborateRoute key={0} />]);
+  };
+
+  const deleteEmployee = (id: number) => {
+    setEmployees((prevEmployees) =>
+      prevEmployees.filter((employee) => employee.id !== id)
+    );
+  };
+
   return (
-    <div>
+    <div className="component">
       {/* <div className="project"> */}
       <div className="block project">
         <Typography.Title level={4}> Проект </Typography.Title>
@@ -85,27 +131,75 @@ const BusinessTripProcess: React.FC = () => {
       </div>
       <div className="block employeeOnBusinessTrip">
         <Typography.Title level={4}> Командируемый/-ые </Typography.Title>
-        {employees.map((employee, index) =>
-          React.cloneElement(employee, { key: index })
-        )}
-        <Button onClick={addEmployee} className="addEmployee" type="primary">
-          Добавить сотрудника
-        </Button>
+        {employees.map((employee) => employee.element)}
+        <div className="buttonGroup">
+          {employees.length > 1 && (
+            <Button
+              onClick={() => deleteEmployee(employees.length - 1)}
+              className="deleteEmployee"
+              type="primary"
+              ghost
+            >
+              Удалить
+            </Button>
+          )}
+          <Button onClick={addEmployee} className="addEmployee" type="primary">
+            Добавить сотрудника
+          </Button>
+        </div>
       </div>
       <div className="block routes">
         <Typography.Title level={4}> Направление </Typography.Title>
-        <Route />
-        <div className="elaborateRouteButton">
-          <ElaborateRouteIcon />
-          <span>Сложный маршрут</span>
-        </div>
 
-        <ElaborateRoute />
-
-        {/* <Button className="addRoute" type="primary">
-          Добавить направление
-        </Button> */}
+        {isSimpleRoute ? (
+          <>
+            <SimpleRoute />
+            <div
+              className="elaborateRouteButton"
+              onClick={() => setSimpleRoute(false)}
+            >
+              <ElaborateRouteIcon />
+              <span>Сложный маршрут</span>
+            </div>
+          </>
+        ) : (
+          <>
+            {routes.map((route, index) =>
+              React.cloneElement(route, { key: index })
+            )}
+            <ElaborateRoute />
+            <div className="bottomLine">
+              <div className="elaborateRouteButton" onClick={backToSimpleRoute}>
+                <ElaborateRouteIcon />
+                <span>Вернуться к простому маршруту</span>
+              </div>
+              <Button onClick={addRoute} type="primary">
+                Добавить направление
+              </Button>
+            </div>
+          </>
+        )}
       </div>
+      <div className="block expenses">
+        <Typography.Title level={4}> Расходы </Typography.Title>
+        <Input
+          value="Вам нужно проживание во время командировки?"
+          disabled
+          style={{ color: 'black' }}
+        />
+        <div className="buttonGroup">
+          <button className="button confirm">Да</button>
+          <button className="button decline">Нет</button>
+        </div>
+        <p className="description">*Тревел менеджер просчитает сумму</p>
+        <TextArea
+          className="textArea"
+          variant={'filled'}
+          autoSize={{ minRows: 9 }}
+          placeholder="Напишите доп информацию по расходам"
+        />
+      </div>
+      <button className="sendButton">Отправить</button>
       {/* //{' '} */}
       {/* </div> */}
     </div>

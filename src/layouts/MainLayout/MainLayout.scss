@@ -2,19 +2,19 @@
   a {
     text-decoration: none;
   }
-  
+
   min-width: 234px !important;
   display: flex;
   min-height: 100%;
   flex-direction: column;
   padding: 14px;
-  box-shadow: 0px 1px 2.8px 0px #C0C0C040;
+  box-shadow: 0px 1px 2.8px 0px #c0c0c040;
 }
 
 .user-profile-divider {
   height: 44px;
   width: 2px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 
 .antd-layout {
@@ -24,7 +24,7 @@
 .ant-layout-content {
   max-height: 100vh;
   padding: 25px;
-  background: #F0F2F5;
+  background: #f0f2f5;
   overflow: auto; /* Добавьте overflow: auto, чтобы добавить прокрутку, если контент больше размера экрана */
 }
 
@@ -47,8 +47,8 @@ h5.ant-typography {
 }
 
 .ant-layout-header {
-  box-shadow: 0px 1px 2.8px 0px #C0C0C040;
-  border-bottom: 1px solid #C0C0C040;
+  box-shadow: 0px 1px 2.8px 0px #c0c0c040;
+  border-bottom: 1px solid #c0c0c040;
   display: flex;
   justify-content: end;
   align-items: center;

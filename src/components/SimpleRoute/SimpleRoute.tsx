@@ -1,9 +1,8 @@
-import React from 'react';
 import { Input, DatePicker } from 'antd';
 
-import './Route.scss';
+import './SimpleRoute.scss';
 
-const Route: React.FC = () => {
+const SimpleRoute = () => {
   return (
     <div className="route">
       <div className="field">
@@ -36,4 +35,4 @@ const Route: React.FC = () => {
   );
 };
 
-export default Route;
+export default SimpleRoute;

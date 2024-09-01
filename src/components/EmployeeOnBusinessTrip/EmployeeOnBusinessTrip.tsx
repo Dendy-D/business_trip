@@ -1,4 +1,3 @@
-import React from 'react';
 import { Input } from 'antd';
 import { Typography } from 'antd';
 
@@ -6,9 +5,10 @@ import './EmployeeOnBusinessTrip.scss';
 
 type Props = {
   index: number;
-}
+  deleteEmployee: () => void;
+};
 
-const EmployeeOnBusinessTrip: React.FC<Props> = ({ index }) => {
+const EmployeeOnBusinessTrip = ({ index, deleteEmployee }: Props) => {
   return (
     <div className="employeeOnBusinessTrip">
       <Typography.Title level={5}> Командируемый {index + 1} </Typography.Title>
